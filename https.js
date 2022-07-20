@@ -1,23 +1,21 @@
 class HTTPS {
   
-    constructor( ) {
+    constructor( url ) {
         this.axios = require( 'axios' );
-        this.url = 'https://pumpsupermarket.com/'; 
+        this.url = url; 
     }
 
     request( ) {
-       
-        this.axios.get( this.url )
+               
+   this.axios.get( this.url )
             .then( res => {
-                console.log(`statusCode: ${res.status}` );
-                //console.log(res);
+                return "entro 1";
             } )
             .catch( error => {
-                console.log(`statusCode: DOWN`);
-                // console.error(error);
+                return "entro 2";                
             } );     
-               
-    }
+                     
+       }
 
 }
 
