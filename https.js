@@ -6,16 +6,19 @@ class HTTPS {
     }
 
     request( ) {
-               
-   this.axios.get( this.url )
+           
+        return new Promise(resolve => {
+           this.axios.get( this.url )
             .then( res => {
-                return "entro 1";
-            } )
-            .catch( error => {
-                return "entro 2";                
-            } );     
+                resolve("entro 11");
+            } ).catch( error => {
+                resolve("entro 2");                
+            } );  
+
+          })   
+          
                      
-       }
+    }
 
 }
 

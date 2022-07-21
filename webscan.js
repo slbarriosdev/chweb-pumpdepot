@@ -5,7 +5,14 @@ const url = 'https://pumpdepot.us';
 var log = new File();
 var https = new HTTPS(url);
 
-console.log(https.request());
+
+
+
+ const doSomething = async () => {
+     console.log(await https.request());
+   }
+    
+  doSomething();
 
 // if(https.request() == "202"){
 //   log.write(` ${url} is DOWN `);
