@@ -10,13 +10,12 @@ class HTTPS {
         return new Promise(resolve => {
            this.axios.get( this.url )
             .then( res => {
-                resolve("entro 11");
+                resolve(res.status);
             } ).catch( error => {
-                resolve("entro 2");                
+                resolve("-1");                
             } );  
 
-          })   
-          
+          });          
                      
     }
 

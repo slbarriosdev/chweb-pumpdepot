@@ -1,21 +1,23 @@
 const File = require('./files');
 const HTTPS = require('./https')
-const url = 'https://pumpdepot.us';
+const url = 'https://pumpmarket.us/';
 
 var log = new File();
 var https = new HTTPS(url);
-
-
-
+var result = "";
 
  const doSomething = async () => {
-     console.log(await https.request());
-   }
-    
-  doSomething();
+     result = await https.request();
 
-// if(https.request() == "202"){
-//   log.write(` ${url} is DOWN `);
-// }
 
-// log.write( url+' site is DOWN' );
+     
+     if(result == "200"){
+          log.write(` ${url} is online `);
+      }
+      else{
+          log.write(` ${url} is DOWN!!!!!`);
+      }
+   
+ }
+  
+ doSomething();
